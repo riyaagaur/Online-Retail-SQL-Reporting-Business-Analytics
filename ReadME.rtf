@@ -1,102 +1,18 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2865
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww14040\viewh13020\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+## SQL Reporting Project \'96 Online Retail Dataset\
 
-\f0\fs24 \cf0 \
-SQL Reporting Project \'96 Online Retail Dataset\
-\
-What this project is\
-This is a small end-to-end reporting project using the Online Retail dataset.  \
+What this project is
+This is a small end-to-end reporting project using the Online Retail dataset.  
 The goal was to take raw transaction data and turn it into clean business reporting outputs (KPIs, trends, and customer insights) using SQL and Python.\
-\
 I used PostgreSQL (via pgAdmin) for the database layer and Jupyter Notebook for pulling the results, exporting them, and creating a couple of quick charts.\
-\
----\
-\
- Tools I used\
-- PostgreSQL (pgAdmin 4)\
-- SQL (CTEs, aggregations, grouping, time-based reporting)\
-- Python (Pandas, SQLAlchemy)\
-- Jupyter Notebook\
-- Matplotlib (basic charts)\
-\
----\
-\
-Dataset\
-File: `data/Online_Retail.csv`\
-\
-The dataset contains online retail transactions including:\
-- invoices (orders)\
-- items/products\
-- quantities and prices\
-- invoice timestamp\
-- customer ID and country\
-\
----\
-\
-What I built\
-1. Clean reporting layer\
-Since the raw dataset contains returns/cancellations and some missing values, I created a cleaned fact table where:\
-- quantity > 0\
-- unit price > 0\
-- customer ID is available\
-\
-That cleaned dataset was used for all the reporting queries.\
-\
- 2. Reporting outputs\
-I generated a few core reports that you would typically see in a basic sales performance dashboard:\
-\
-KPI Summary\
-- total orders\
-- total customers\
-- total revenue\
-- average order value (AOV)\
-\
-Revenue Trend\
-- monthly revenue trend over time\
-\
-Customer Performance\
-- top 10 customers by total revenue\
-\
-Retention Metric\
-- repeat customer rate (%)\
-\
----\
-\
-All generated outputs are saved under the `outputs/` folder.\
-\
- CSV files\
-- `outputs/final_kpis.csv`\
-- `outputs/monthly_revenue.csv`\
-- `outputs/top_customers.csv`\
-- `outputs/repeat_customer_rate.csv`\
-\
-Charts\
-- `outputs/charts/monthly_revenue_trend.png`\
-- `outputs/charts/top_customers_revenue.png`\
-\
----\
-\
-How to run this project\
-1. Load the dataset into PostgreSQL as a table called `online_retail`\
-2. Open and run the notebook:\
-   - `notebooks/daxwell_sql_reporting.ipynb`\
-3. Check the results inside the `outputs/` folder\
-\
----\
-\
+
+What I built
+1. Clean reporting layer
+2. Reporting outputs
+KPI Summary
+Revenue Trend
+Customer Performance
+Retention Metric
+
 Quick notes / assumptions\
 - I excluded negative quantities and zero unit prices since they usually represent returns/cancellations or invalid rows.\
 - Customer ID is required for customer-based reporting, so I filtered out rows where it was missing.\
-\
----\
-\
-If I had more time\
-A few things I would extend next:\
-- RFM-based customer segmentation\
-- cohort retention analysis\
-- product/category-level reporting\
-- turning the reporting outputs into a Tableau dashboard}
